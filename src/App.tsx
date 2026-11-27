@@ -38,7 +38,7 @@ const HERO_MODES = [
     num: '01',
     label: 'Living',
     caption: 'Private residences & sky terraces across Thaltej, Science City & Bodakdev',
-    insetImage: '/images/cat-residential.jpg',
+    insetImage: './images/cat-residential.jpg',
     insetAlt: 'Luxury residential terrace in West Ahmedabad',
   },
   {
@@ -46,7 +46,7 @@ const HERO_MODES = [
     num: '02',
     label: 'Business',
     caption: 'Grade-A corporate towers & flagship showrooms along SG Highway',
-    insetImage: '/images/cat-commercial.jpg',
+    insetImage: './images/cat-commercial.jpg',
     insetAlt: 'Contemporary commercial tower along SG Highway',
   },
   {
@@ -54,7 +54,7 @@ const HERO_MODES = [
     num: '03',
     label: 'Land',
     caption: 'Vetted NA plots, estates & industrial hubs across Ahmedabad & Gujarat',
-    insetImage: '/images/cat-land.jpg',
+    insetImage: './images/cat-land.jpg',
     insetAlt: 'Expansive plotted estate and landscaped land in Ahmedabad',
   },
 ] as const;
@@ -485,7 +485,7 @@ export function App() {
                   <div className="hero-brick-frame col-span-12 sm:col-span-9 relative overflow-hidden border border-[#D1D1CB] bg-white p-2 shadow-[0_24px_60px_-24px_rgba(10,10,10,0.18)]">
                     <div className="overflow-hidden aspect-[16/11] bg-[#EFECE6]">
                       <img
-                        src="/images/hero-architecture.jpg"
+                        src="./images/hero-architecture.jpg"
                         alt="Contemporary travertine and bronze residential pavilion in Ahmedabad at golden hour"
                         fetchPriority="high"
                         width={1376}
@@ -671,7 +671,7 @@ export function App() {
                 <div className="story-photo-reveal border border-[#E2E2DD] bg-[#F8F8F6] p-3">
                   <div className="overflow-hidden bg-[#EFECE6]">
                     <img
-                      src="/images/story-architecture.jpg"
+                      src="./images/story-architecture.jpg"
                       alt="Minimalist sunlit concrete and limestone architectural courtyard"
                       loading="lazy"
                       width={896}
@@ -1115,7 +1115,7 @@ export function App() {
 
                 <div className="clip-reveal mt-8 border border-[#E2E2DD] bg-[#F8F8F6] p-2.5">
                   <img
-                    src="/images/why-midtown.jpg"
+                    src="./images/why-midtown.jpg"
                     alt="Midtown Property private architectural consultation studio"
                     loading="lazy"
                     width={1200}
@@ -1189,7 +1189,7 @@ export function App() {
         >
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
             <img
-              src="/images/investment-architecture.jpg"
+              src="./images/investment-architecture.jpg"
               alt="Twilight commercial skyline and illuminated executive tower"
               loading="lazy"
               width={1376}
@@ -1464,7 +1464,7 @@ export function App() {
         >
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
             <img
-              src="/images/closing-architecture.jpg"
+              src="./images/closing-architecture.jpg"
               alt="Sunlit travertine architectural sky-frame courtyard looking toward contemporary towers"
               loading="lazy"
               width={1376}

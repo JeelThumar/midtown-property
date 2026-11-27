@@ -169,7 +169,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
               aria-label="Midtown Property — Return to top"
             >
               <img
-                src="/images/midtown-logo.png"
+                src="./images/midtown-logo.png"
                 alt="Midtown Property — Reach beyond with us"
                 width={180}
                 height={89}
@@ -269,7 +269,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
           <nav ref={sheetRef} className="Drawer-sheet p-7" aria-label="Mobile">
             <div className="flex items-center justify-between border-b border-[#E2E2DD] pb-5">
               <img
-                src="/images/midtown-logo.png"
+                src="./images/midtown-logo.png"
                 alt="Midtown Property"
                 width={150}
                 height={74}

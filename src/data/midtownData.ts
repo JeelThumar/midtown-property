@@ -80,7 +80,7 @@ export const PROPERTY_CATEGORIES: CategoryItem[] = [
     subtitle: 'Private Sanctuaries & Urban Living',
     description:
       'Apartments, bungalows, duplexes, penthouses, row houses and homes crafted for modern living across West Ahmedabad.',
-    image: '/images/cat-residential.jpg',
+    image: './images/cat-residential.jpg',
     types: ['Apartments', 'Bungalows', 'Duplexes', 'Penthouses', 'Row Houses'],
   },
   {
@@ -90,7 +90,7 @@ export const PROPERTY_CATEGORIES: CategoryItem[] = [
     subtitle: 'Workspaces & Retail Frontage',
     description:
       'Office spaces, showrooms, retail shops, business centres and high-visibility commercial investments along key corridors.',
-    image: '/images/cat-commercial.jpg',
+    image: './images/cat-commercial.jpg',
     types: ['Office Spaces', 'Showrooms', 'Retail Shops', 'Business Centres'],
   },
   {
@@ -100,7 +100,7 @@ export const PROPERTY_CATEGORIES: CategoryItem[] = [
     subtitle: 'Long-Term Appreciation & Estates',
     description:
       'Agricultural land, NA land, farmhouses, residential plots and commercial plots vetted for clarity and future growth.',
-    image: '/images/cat-land.jpg',
+    image: './images/cat-land.jpg',
     types: ['NA Land', 'Agricultural Land', 'Farmhouses', 'Residential & Commercial Plots'],
   },
   {
@@ -110,7 +110,7 @@ export const PROPERTY_CATEGORIES: CategoryItem[] = [
     subtitle: 'Logistics & Manufacturing Hubs',
     description:
       'Warehouses, godowns, factories, industrial land and scalable business infrastructure across Gujarat’s industrial belts.',
-    image: '/images/cat-industrial.jpg',
+    image: './images/cat-industrial.jpg',
     types: ['Warehouses', 'Godowns', 'Factories', 'Industrial Land'],
   },
 ];
@@ -129,7 +129,7 @@ export const FEATURED_PROPERTIES: PropertyItem[] = [
     availability: 'Ready Possession',
     developer: 'A. Shridhar Group',
     possession: 'Ready Possession (Jun 2024)',
-    image: '/images/prop-anantara-abode.jpg',
+    image: './images/prop-anantara-abode.jpg',
     featured: true,
     summary:
       'A signature ready-possession residential landmark near Science Park, Science City, pairing spacious floor plates with understated architectural craft.',
@@ -152,7 +152,7 @@ export const FEATURED_PROPERTIES: PropertyItem[] = [
     price: '₹1.90 Cr',
     priceNote: '₹7,896.92 / Sq.Ft',
     availability: 'Active Listing',
-    image: '/images/prop-shompole-brochure.jpg',
+    image: './images/prop-shompole-brochure.jpg',
     summary:
       'An active 3 BHK residence in Thaltej offering generous 1,563 Sq.Ft carpet proportions and refined low-rise neighbourhood character.',
     highlights: [
@@ -174,7 +174,7 @@ export const FEATURED_PROPERTIES: PropertyItem[] = [
     priceNote: 'Price available on consultation',
     availability: 'RERA Approved Project',
     possession: 'Apr 2025 Schedule',
-    image: '/images/prop-eminence-96.jpg',
+    image: './images/prop-eminence-96.jpg',
     summary:
       'Expansive 4 and 5 BHK residences and duplexes off Aarayaman Lane in Thaltej, crafted for multi-generational privacy and skyline views.',
     highlights: [
@@ -196,7 +196,7 @@ export const FEATURED_PROPERTIES: PropertyItem[] = [
     price: '₹1.65 Cr – ₹2.10 Cr',
     availability: 'Under Construction',
     possession: 'Dec 2027',
-    image: '/images/prop-super-shaligram.jpg',
+    image: './images/prop-super-shaligram.jpg',
     summary:
       'Contemporary high-rise living along SG Highway in Gota, combining central landscaped courtyards with strong corridor connectivity.',
     highlights: [
@@ -218,7 +218,7 @@ export const FEATURED_PROPERTIES: PropertyItem[] = [
     price: '₹57.47 Lac – ₹90.94 Lac',
     availability: 'Under Construction',
     possession: 'Jul 2028',
-    image: '/images/prop-prospera.jpg',
+    image: './images/prop-prospera.jpg',
     imageNote: 'Representative architectural visual — official project imagery shared on inquiry',
     summary:
       'High-visibility commercial offices, showrooms and retail spaces positioned at Vaishnodevi Circle along the SG Highway growth corridor.',
@@ -428,22 +428,22 @@ export const TESTIMONIALS: TestimonialItem[] = [
 ];
 
 export const DEVELOPER_PARTNERS: PartnerItem[] = [
-  { slug: 'a-shridhar', name: 'A. Shridhar Group', logo: '/partners/a-shridhar.png' },
-  { slug: 'shivalik', name: 'Shivalik Group', logo: '/partners/shivalik.png' },
-  { slug: 'b-safal', name: 'B Safal', logo: '/partners/b-safal.png' },
-  { slug: 'gala-infra', name: 'Gala Infrastructure', logo: '/partners/gala-infra.png' },
-  { slug: 'sobha', name: 'SOBHA Limited', logo: '/partners/sobha.png' },
-  { slug: 'sheetal', name: 'Sheetal Infrastructure', logo: '/partners/sheetal.png' },
-  { slug: 'shaligram', name: 'Shaligram Group', logo: '/partners/shaligram.png' },
-  { slug: 'navratna', name: 'Navratna Group', logo: '/partners/navratna.png' },
-  { slug: 'savvy', name: 'Savvy Infrastructures', logo: '/partners/savvy.png' },
-  { slug: 'rajyash', name: 'Rajyash Group', logo: '/partners/rajyash.png' },
-  { slug: 'ganesh', name: 'Ganesh Housing Corporation', logo: '/partners/ganesh.png' },
-  { slug: 'sun-builders', name: 'Sun Builders', logo: '/partners/sun-builders.png' },
-  { slug: 'bakeri', name: 'Bakeri Group', logo: '/partners/bakeri.png' },
-  { slug: 'shilp', name: 'Shilp Group', logo: '/partners/shilp.png' },
-  { slug: 'venus', name: 'Venus Infrastructure', logo: '/partners/venus.png' },
-  { slug: 'vishwanath', name: 'Vishwanath Builders', logo: '/partners/vishwanath.png' },
-  { slug: 'hn-safal', name: 'HN Safal', logo: '/partners/hn-safal.png' },
-  { slug: 'ratnaakar', name: 'Ratnaakar Group', logo: '/partners/ratnaakar.png' },
+  { slug: 'a-shridhar', name: 'A. Shridhar Group', logo: './partners/a-shridhar.png' },
+  { slug: 'shivalik', name: 'Shivalik Group', logo: './partners/shivalik.png' },
+  { slug: 'b-safal', name: 'B Safal', logo: './partners/b-safal.png' },
+  { slug: 'gala-infra', name: 'Gala Infrastructure', logo: './partners/gala-infra.png' },
+  { slug: 'sobha', name: 'SOBHA Limited', logo: './partners/sobha.png' },
+  { slug: 'sheetal', name: 'Sheetal Infrastructure', logo: './partners/sheetal.png' },
+  { slug: 'shaligram', name: 'Shaligram Group', logo: './partners/shaligram.png' },
+  { slug: 'navratna', name: 'Navratna Group', logo: './partners/navratna.png' },
+  { slug: 'savvy', name: 'Savvy Infrastructures', logo: './partners/savvy.png' },
+  { slug: 'rajyash', name: 'Rajyash Group', logo: './partners/rajyash.png' },
+  { slug: 'ganesh', name: 'Ganesh Housing Corporation', logo: './partners/ganesh.png' },
+  { slug: 'sun-builders', name: 'Sun Builders', logo: './partners/sun-builders.png' },
+  { slug: 'bakeri', name: 'Bakeri Group', logo: './partners/bakeri.png' },
+  { slug: 'shilp', name: 'Shilp Group', logo: './partners/shilp.png' },
+  { slug: 'venus', name: 'Venus Infrastructure', logo: './partners/venus.png' },
+  { slug: 'vishwanath', name: 'Vishwanath Builders', logo: './partners/vishwanath.png' },
+  { slug: 'hn-safal', name: 'HN Safal', logo: './partners/hn-safal.png' },
+  { slug: 'ratnaakar', name: 'Ratnaakar Group', logo: './partners/ratnaakar.png' },
 ];

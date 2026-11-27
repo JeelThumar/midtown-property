@@ -16,7 +16,7 @@ export function Footer({ onNavigate, onOpenLegal, onSelectCategory }: FooterProp
         <div className="grid gap-8 border-b border-[#D6D2C8] pb-14 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7 space-y-6">
             <img
-              src="/images/midtown-logo.png"
+              src="./images/midtown-logo.png"
               alt="Midtown Property — Reach beyond with us"
               width={230}
               height={114}
