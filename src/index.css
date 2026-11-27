@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #0A0A0A;
+  --color-warm-white: #F8F8F6;
+  --color-warm-stone: #EFECE6;
+  --color-paper: #FFFFFF;
+  --color-brand-green: #84C44C;
+  --color-brand-green-deep: #4B7F1E;
+  --color-neutral-grey: #6E6E73;
+  --color-divider: #E2E2DD;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    scroll-padding-top: 92px;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: #F8F8F6;
+    color: #0A0A0A;
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+    line-height: 1.6;
+  }
+
+  :where(a:any-link, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2.5px solid #4B7F1E;
+    outline-offset: 3px;
+  }
+}
+
+/* Subtle architectural masonry grid backdrop for brick-by-brick drafting feel */
+.masonry-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(10, 10, 10, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(10, 10, 10, 0.035) 1px, transparent 1px);
+  background-size: 72px 48px;
+}
+
+/* Visually hidden utility (keeps skip links and live regions accessible) */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: #0A0A0A;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #84C44C;
+}
+
+/* Native <dialog> modal scroll-containment */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(10, 10, 10, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+/* Discrete dialog entry/exit animation with @starting-style */
+@media (prefers-reduced-motion: no-preference) {
+  dialog.editorial-dialog[open] {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  dialog.editorial-dialog {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+    transition:
+      opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      display 0.28s,
+      overlay 0.28s;
+    transition-behavior: allow-discrete;
+  }
+
+  @starting-style {
+    dialog.editorial-dialog[open] {
+      opacity: 0;
+      transform: translateY(16px) scale(0.985);
+    }
+  }
+}
+
+/* Mobile Navigation Drawer using native <dialog> + scroll-snap */
+.Drawer {
+  --drawer-width: min(22rem, 85dvw, 100dvw - 24px);
+  --drawer-backdrop: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  overflow: visible;
+}
+
+.Drawer::backdrop {
+  background: #0A0A0A;
+  opacity: calc(var(--drawer-backdrop) * 0.55);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
+
+.Drawer-scroller {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100% var(--drawer-width);
+  overflow-x: scroll;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  height: 100svh;
+}
+
+.Drawer-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Drawer-scroller {
+    scroll-behavior: smooth;
+  }
+}
+
+.Drawer-scroller::before {
+  content: "";
+  scroll-snap-align: start;
+  scroll-initial-target: nearest;
+}
+
+.Drawer-sheet {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100svh;
+  background: #F8F8F6;
+  color: #0A0A0A;
+  overflow-y: auto;
+  scroll-snap-align: end;
+  scrollbar-width: none;
+  border-left: 1px solid #E2E2DD;
+}
+
+@supports (animation-timeline: scroll()) {
+  .Drawer {
+    timeline-scope: --drawer-fade;
+    animation: fade-drawer-backdrop linear both;
+    animation-timeline: --drawer-fade;
+  }
+
+  .Drawer-scroller {
+    scroll-timeline: --drawer-fade x;
+  }
+
+  @property --drawer-backdrop {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  @keyframes fade-drawer-backdrop {
+    0% { --drawer-backdrop: 0; }
+    100% { --drawer-backdrop: 1; }
+  }
+}
+
+/* CSS Scroll-Driven Image Zoom with strict @supports and reduced-motion gate */
+@media (prefers-reduced-motion: no-preference) {
+  @supports ((animation-timeline: view()) and (animation-range: entry)) {
+    @keyframes editorial-image-zoom {
+      from {
+        transform: scale(1.07);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    .scroll-zoom-media {
+      animation: editorial-image-zoom auto linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 45%;
+    }
+  }
+}
+
+/* Form Validation (:user-invalid + fallback) */
+.field-control {
+  font: inherit;
+  font-size: max(1rem, 1em);
+  min-height: 48px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+@media (pointer: coarse) {
+  .field-control {
+    min-height: 52px;
+  }
+}
+
+.field-error-msg {
+  display: none;
+  color: #b91c1c;
+  font-size: 0.85rem;
+  margin-top: 0.375rem;
+}
+
+.field-control:is(:user-invalid, .user-invalid-fallback) {
+  border-color: #b91c1c !important;
+  background-color: #fef2f2 !important;
+}
+
+.field-control:is(:user-invalid, .user-invalid-fallback) + .field-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.field-control:is(:user-valid, .user-valid-fallback) {
+  border-color: #4B7F1E;
+}
